@@ -1,0 +1,8 @@
+The general idea behind my filtering was:
+
+-Skip over any non-ip, tcp/udp packets
+-Check tcp flags for 0 (NULL) and 41 (XMAS)
+-Check the payload of every packet for:
+	-Password leakage : (PASS)
+	-Credit card info : four regexes for different credit card providers
+	-XSS : script tags in a get or post request.
